@@ -1,0 +1,153 @@
+
+/* Variables de color y diseño para mantener la consistencia */
+:root {
+    --bg-color: #0a0a0c; /* Fondo casi negro */
+    --glass-bg: rgba(183, 150, 150, 0.04); /* Cristal semitransparente */
+    --glass-border: rgba(255, 255, 255, 0.08); /* Borde sutil del cristal */
+    --gold-accent: #d4af37; /* Tono dorado premium */
+    --gold-hover: #e8c96b;
+    --text-main: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Importar fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-main);
+    overflow: hidden; /* Evita barras de desplazamiento por los elementos de fondo */
+}
+
+/* --- Elementos 3D desenfocados del fondo --- */
+.esfera-fondo {
+    position: fixed;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+.esfera-1 { width: 700px; height: 700px; top: -100px; left: -100px; }
+.esfera-2 { width: 500px; height: 500px; bottom: 50px; right: -50px; }
+.esfera-3 { width: 350px; height: 350px; top: 40%; left: 60%; background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%); }
+
+/* --- Contenedor principal de cristal --- */
+.glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px); /* El efecto de cristal esmerilado */
+    -webkit-backdrop-filter: blur(20px);
+    padding: 50px 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Títulos --- */
+h1 {
+    color: var(--gold-accent);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: var(--text-secondary);
+    font-weight: 300;
+    font-size: 1rem;
+    margin: 0 0 35px 0;
+}
+
+/* --- Formulario --- */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    background: rgba(0, 0, 0, 0.2); /* Fondo oscuro para los inputs */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+/* --- Botón --- */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--gold-accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* --- Enlaces de pie de página --- */
+p {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--gold-hover);
+    text-decoration: underline;
+}
